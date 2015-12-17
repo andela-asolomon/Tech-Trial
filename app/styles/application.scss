@@ -1,0 +1,87 @@
+@import "bourbon";
+
+/* Color constants */
+$pending: rgb(245, 156, 63);
+$passed: rgb(26, 179, 148);
+$failed: rgb(237, 85, 101);
+$running: rgb(104, 126, 194);
+
+@include keyframes(fadeIn) {
+  from {
+    @include transform(translateY(-20px));
+    opacity: 0;
+  }
+  to {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}
+
+table {
+  border-left: 10px solid #CCC;
+  border-right: 2px solid #CCC;
+  border-bottom: 2px solid #CCC;
+}
+
+tr {
+  height: 62px;
+}
+
+.pending {
+  border-left: 10px solid $pending;
+  color: $pending;
+}
+
+.failed {
+  border-left: 10px solid $failed;
+  color: $failed;
+}
+
+.passed {
+  border-left: 10px solid $passed;
+  color: $passed;
+}
+
+.running {
+  border-left: 10px solid $running;
+  color: $running;
+}
+
+.fadein.fadeout {
+  @include animation(fadeIn 250ms);
+  transition-duration: 500ms;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+.pending-details {
+  border-top: solid $pending;
+  border-left: none;
+}
+
+.failed-details {
+  border-top: solid $failed;
+  border-left: none;
+}
+
+.passed-details {
+  border-top: solid $passed;
+  border-left: none;
+}
+
+.running-details {
+  border-top: solid $running;
+  border-left: none;
+}
+
+.details:last-child {
+  display: none;
+}

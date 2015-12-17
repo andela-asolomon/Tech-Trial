@@ -1,0 +1,42 @@
+table.table
+  thead
+    tr
+      th Changelist
+      th Owner
+      th Time Started
+      th Build
+      th Unit Test
+      th Functional
+      th Status
+  tbody(ng-repeat="dat in data")
+    tr(ng-click="toggleDetail($index, $event)" ng-class="getStatus(dat.status)")
+      td {{dat.changelist}}
+      td {{dat.owner}}
+      td {{dat.time_started | date: 'medium'}}
+      td
+        span {{dat.build}}%
+      td
+        span {{dat.unit_test}}%
+      td
+        span {{dat.functional}}%
+      td
+        span.fa-stack.fa-lag(ng-if="dat.status === 'Pending'")
+          i.fa.fa-circle-thin.fa-stack-2x
+          i.fa.fa-ellipsis-h.fa-stack-1x
+        span.fa-stack.fa-lag(ng-if="dat.status === 'Failed'")
+          i.fa.fa-circle-thin.fa-stack-2x
+          i.fa.fa-remove.fa-stack-1x
+        span.fa-stack.fa-lag(ng-if="dat.status === 'Passed'")
+          i.fa.fa-circle-thin.fa-stack-2x
+          i.fa.fa-check.fa-stack-1x
+        span.fa-stack.fa-lag(ng-if="dat.status === 'Running'")
+          i.fa.fa-refresh.fa-stack-1x
+        span &nbsp {{dat.status}}
+    tr.fadein.fadeout(ng-show="activePosition === $index")
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
+      td Ayoola Solomon Olayinka
