@@ -1,0 +1,89 @@
+/* Color constants */
+@-webkit-keyframes fadeIn {
+  from {
+    -webkit-transform: translateY(-20px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  from {
+    -moz-transform: translateY(-20px);
+    opacity: 0; }
+  to {
+    -moz-transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0; }
+  to {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; } }
+
+table {
+  border-left: 10px solid #CCC;
+  border-right: 2px solid #CCC;
+  border-bottom: 2px solid #CCC; }
+
+tr {
+  height: 62px; }
+
+.pending {
+  border-left: 10px solid #f59c3f;
+  color: #f59c3f; }
+
+.failed {
+  border-left: 10px solid #ed5565;
+  color: #ed5565; }
+
+.passed {
+  border-left: 10px solid #1ab394;
+  color: #1ab394; }
+
+.running {
+  border-left: 10px solid #687ec2;
+  color: #687ec2; }
+
+.fadein.fadeout {
+  -webkit-animation: fadeIn 250ms;
+  -moz-animation: fadeIn 250ms;
+  animation: fadeIn 250ms;
+  transition-duration: 500ms; }
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0; }
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1; }
+
+.pending-details {
+  border-top: solid #f59c3f;
+  border-left: none; }
+
+.failed-details {
+  border-top: solid #ed5565;
+  border-left: none; }
+
+.passed-details {
+  border-top: solid #1ab394;
+  border-left: none; }
+
+.running-details {
+  border-top: solid #687ec2;
+  border-left: none; }
+
+.details:last-child {
+  display: none; }
